@@ -24,40 +24,30 @@
 // Make boxes clickable again
 // Game starts
 
-const selector = document.querySelectorAll(".gameSelector");
+const game = document.querySelectorAll(".item");
 
-const game = document.querySelectorAll(".game");
+let turn = 0;
 
-selector.forEach(function(select) {
-    select.addEventListener("click", function(evt) {
+game.forEach(function(block) {
+    block.addEventListener("click", function(evt) {
         evt.preventDefault();
-
-        if (player1 == true) {
-            game[list.index(select)].style.backgroundColor = "blue";
-            console.log(game[list.index(select)].style.backgroundColor);
-            player1 = false;
-            console.log(player1);
-            player2 = true;
-            console.log(player2)
-        } else if (player2 == true) {
-            game[list.index(select)].style.backgroundColor = "red";
-            console.log(game[list.index(select)].style.backgroundColor);
-            player2 = false;
-            console.log(player2);
-            player1 = true
-            console.log(player1);
+        if (turn == 0 && block.style.background == "") {
+            block.style.background = "red";
+            turn = 1;
+        } else if (turn == 1 && block.style.background == "") {
+            block.style.background = "blue";
+            turn = 0;
         }
     })
-
 })
 
-class Tictactoe {
-    constructor(turn, player1, player2) {
-        this.turn = turn
-        this.player1 = player1
-        this.player2 = player2
-    }
+// class Tictactoe {
+//     constructor(turn, player1, player2) {
+//         this.turn = turn
+//         this.player1 = player1
+//         this.player2 = player2
+//     }
 
 
 
-}
+// }
