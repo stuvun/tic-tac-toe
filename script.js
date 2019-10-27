@@ -26,7 +26,22 @@
 
 const game = document.querySelectorAll(".item");
 
+let player1 = [];
+let player2 = [];
 let turn = 0;
+const win = [ ["1", "2", "3"],
+              ["4", "5", "6"],
+              ["7", "8", "9"],
+              ["1", "4", "7"],
+              ["2", "5", "8"],
+              ["3", "6", "9"],
+              ["1", "5", "9"],
+              ["3", "5", "7"] ];
+
+const winRev = win.slice(0).reverse().map(i => { return i });
+console.log(win);
+console.log(winRev);
+
 
 game.forEach(function(block) {
     block.addEventListener("click", function(evt) {
@@ -40,7 +55,6 @@ game.forEach(function(block) {
         }
     })
 })
-
 // class Tictactoe {
 //     constructor(turn, player1, player2) {
 //         this.turn = turn
