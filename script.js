@@ -42,26 +42,58 @@ const winRev = win.slice(0).reverse().map(i => { return i });
 console.log(win);
 console.log(winRev);
 
-
 game.forEach(function(block) {
     block.addEventListener("click", function(evt) {
         evt.preventDefault();
+
         if (turn == 0 && block.style.background == "") {
             block.style.background = "red";
-            turn = 1;
-        } else if (turn == 1 && block.style.background == "") {
+            console.log(block.style.background == "red");
+            if ((game[0].style.background == "red" && game[1].style.background == "red") && game[2].style.background == "red")
+            { console.log("Player 1 Wins!") }
+            else if ((game[3].style.background == "red" && game[4].style.background == "red") && game[5].style.background == "red")
+            { console.log("Player 1 Wins!") }
+            else if ((game[6].style.background == "red" && game[7].style.background == "red") && game[8].style.background == "red")
+            { console.log("Player 1 Wins!") }
+            else if ((game[0].style.background == "red" && game[3].style.background == "red") && game[6].style.background == "red")
+            { console.log("Player 1 Wins!") }
+            else if ((game[1].style.background == "red" && game[4].style.background == "red") && game[7].style.background == "red")
+            { console.log("Player 1 Wins!") }
+            else if ((game[2].style.background == "red" && game[5].style.background == "red") && game[8].style.background == "red")
+            { console.log("Player 1 Wins!") }
+            else if ((game[0].style.background == "red" && game[4].style.background == "red") && game[8].style.background == "red")
+            { console.log("Player 1 Wins!") }
+            else if ((game[2].style.background == "red" && game[4].style.background == "red") && game[6].style.background == "red")
+            { console.log("Player 1 Wins!") }
+            else {
+                turn = 1;
+                console.log("Player 2's turn")
+            }
+        }
+        else if (turn == 1 && block.style.background == "") {
             block.style.background = "blue";
-            turn = 0;
+            console.log(block.style.background == "blue")
+            if ((game[0].style.background == "blue" && game[1].style.background == "blue") && game[2].style.background == "blue")
+            { console.log("Player 2 Wins!") }
+            else if ((game[3].style.background == "blue" && game[4].style.background == "blue") && game[5].style.background == "blue")
+            { console.log("Player 2 Wins!") }
+            else if ((game[6].style.background == "blue" && game[7].style.background == "blue") && game[8].style.background == "blue")
+            { console.log("Player 2 Wins!") }
+            else if ((game[0].style.background == "blue" && game[3].style.background == "blue") && game[6].style.background == "blue")
+            { console.log("Player 2 Wins!") }
+            else if ((game[1].style.background == "blue" && game[4].style.background == "blue") && game[7].style.background == "blue")
+            { console.log("Player 2 Wins!") }
+            else if ((game[2].style.background == "blue" && game[5].style.background == "blue") && game[8].style.background == "blue")
+            { console.log("Player 2 Wins!") }
+            else if ((game[0].style.background == "blue" && game[4].style.background == "blue") && game[8].style.background == "blue")
+            { console.log("Player 2 Wins!") }
+            else if ((game[2].style.background == "blue" && game[4].style.background == "blue") && game[6].style.background == "blue")
+            { console.log("Player 2 Wins!") }
+            else {
+                turn = 0;
+                console.log("Player 1's turn")
+            }
         }
     })
 })
-// class Tictactoe {
-//     constructor(turn, player1, player2) {
-//         this.turn = turn
-//         this.player1 = player1
-//         this.player2 = player2
-//     }
 
-
-
-// }
