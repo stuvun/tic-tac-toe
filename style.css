@@ -85,7 +85,3 @@ html, body {
 .hidden {
     visibility: hidden;
 }
-
-.visible {
-    visibility: visible;
-}
