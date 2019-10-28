@@ -81,3 +81,11 @@ html, body {
 .red {
     background: red;
 }
+
+.hidden {
+    visibility: hidden;
+}
+
+.visible {
+    visibility: visible;
+}

@@ -25,6 +25,8 @@
 // Game starts
 
 const game = document.querySelectorAll(".item");
+const win1 = document.querySelector(".player1Win");
+const win2 = document.querySelector(".player2Win");
 
 let player1 = [];
 let player2 = [];
@@ -45,55 +47,47 @@ console.log(winRev);
 game.forEach(function(block) {
     block.addEventListener("click", function(evt) {
         evt.preventDefault();
+        
+        console.log(block);
 
         if (turn == 0 && block.style.background == "") {
             block.style.background = "red";
-            console.log(block.style.background == "red");
-            if ((game[0].style.background == "red" && game[1].style.background == "red") && game[2].style.background == "red")
-            { console.log("Player 1 Wins!") }
-            else if ((game[3].style.background == "red" && game[4].style.background == "red") && game[5].style.background == "red")
-            { console.log("Player 1 Wins!") }
-            else if ((game[6].style.background == "red" && game[7].style.background == "red") && game[8].style.background == "red")
-            { console.log("Player 1 Wins!") }
-            else if ((game[0].style.background == "red" && game[3].style.background == "red") && game[6].style.background == "red")
-            { console.log("Player 1 Wins!") }
-            else if ((game[1].style.background == "red" && game[4].style.background == "red") && game[7].style.background == "red")
-            { console.log("Player 1 Wins!") }
-            else if ((game[2].style.background == "red" && game[5].style.background == "red") && game[8].style.background == "red")
-            { console.log("Player 1 Wins!") }
-            else if ((game[0].style.background == "red" && game[4].style.background == "red") && game[8].style.background == "red")
-            { console.log("Player 1 Wins!") }
-            else if ((game[2].style.background == "red" && game[4].style.background == "red") && game[6].style.background == "red")
-            { console.log("Player 1 Wins!") }
-            else {
-                turn = 1;
-                console.log("Player 2's turn")
-            }
-        }
-        else if (turn == 1 && block.style.background == "") {
+            turn = 1;
+            if (game[0].style.background+game[1].style.background+game[2].style.background == "redredred")
+            { turn = 3 }
+            else if (game[3].style.background+game[4].style.background+game[5].style.background == "redredred")
+            { turn = 3 }
+            else if (game[6].style.background+game[7].style.background+game[8].style.background == "redredred")
+            { turn = 3 }
+            else if (game[0].style.background+game[3].style.background+game[6].style.background == "redredred")
+            { turn = 3 }
+            else if (game[1].style.background+game[4].style.background+game[7].style.background == "redredred")
+            { turn = 3 }
+            else if (game[2].style.background+game[5].style.background+game[8].style.background == "redredred")
+            { turn = 3 }
+            else if (game[0].style.background+game[4].style.background+game[8].style.background == "redredred")
+            { turn = 3 }
+            else if (game[2].style.background+game[4].style.background+game[6].style.background == "redredred")
+            { turn = 3 }
+        } else if (turn == 1 && block.style.background == "") {
             block.style.background = "blue";
-            console.log(block.style.background == "blue")
-            if ((game[0].style.background == "blue" && game[1].style.background == "blue") && game[2].style.background == "blue")
-            { console.log("Player 2 Wins!") }
-            else if ((game[3].style.background == "blue" && game[4].style.background == "blue") && game[5].style.background == "blue")
-            { console.log("Player 2 Wins!") }
-            else if ((game[6].style.background == "blue" && game[7].style.background == "blue") && game[8].style.background == "blue")
-            { console.log("Player 2 Wins!") }
-            else if ((game[0].style.background == "blue" && game[3].style.background == "blue") && game[6].style.background == "blue")
-            { console.log("Player 2 Wins!") }
-            else if ((game[1].style.background == "blue" && game[4].style.background == "blue") && game[7].style.background == "blue")
-            { console.log("Player 2 Wins!") }
-            else if ((game[2].style.background == "blue" && game[5].style.background == "blue") && game[8].style.background == "blue")
-            { console.log("Player 2 Wins!") }
-            else if ((game[0].style.background == "blue" && game[4].style.background == "blue") && game[8].style.background == "blue")
-            { console.log("Player 2 Wins!") }
-            else if ((game[2].style.background == "blue" && game[4].style.background == "blue") && game[6].style.background == "blue")
-            { console.log("Player 2 Wins!") }
-            else {
-                turn = 0;
-                console.log("Player 1's turn")
-            }
+            turn = 0;
+            if (game[0].style.background+game[1].style.background+game[2].style.background == "blueblueblue")
+            { turn = 3 }
+            else if (game[3].style.background+game[4].style.background+game[5].style.background == "blueblueblue")
+            { turn = 3 }
+            else if (game[6].style.background+game[7].style.background+game[8].style.background == "blueblueblue")
+            { turn = 3 }
+            else if (game[0].style.background+game[3].style.background+game[6].style.background == "blueblueblue")
+            { turn = 3 }
+            else if (game[1].style.background+game[4].style.background+game[7].style.background == "blueblueblue")
+            { turn = 3 }
+            else if (game[2].style.background+game[5].style.background+game[8].style.background == "blueblueblue")
+            { turn = 3 }
+            else if (game[0].style.background+game[4].style.background+game[8].style.background == "blueblueblue")
+            { turn = 3 }
+            else if (game[2].style.background+game[4].style.background+game[6].style.background == "blueblueblue")
+            { turn = 3 }
         }
     })
 })
-
