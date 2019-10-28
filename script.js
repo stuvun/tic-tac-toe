@@ -11,11 +11,11 @@ const draw = document.querySelector(".gameDraw");
 const rematch = document.querySelector(".rematch");
 
 let turn = 0;
-let red = "redredred";
-let blue = "blueblueblue";
 let round = 0;
 let player1 = 0;
 let player2 = 0;
+let red = "redredred";
+let blue = "blueblueblue";
 
 function endWin1() {
     turn = 3;
