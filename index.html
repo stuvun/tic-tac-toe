@@ -11,20 +11,22 @@
 
 </head>
 <body>
-    <header>TIC-TAC-TOE</header>
+    <div class="headContainer">
+        <header>TIC-TAC-TOE</header>
 
-    <div class="scoreboard">
-        <div class="playerScores">
-            <div class="scores" id="player1">Player 1</div>
-            <div class="scores" id="player2">Player 2</div>
+        <div class="scoreboard head">
+            <div class="playerScores">
+                <div class="scores score1">Player 1: 0</div>
+                <div class="scores score2">Player 2: 0</div>
+            </div>
         </div>
-    </div>
 
-    <div class="turnPhase">
-        <div class="turnHeader"></div>
-        <div class="turnCount">
-            <div class="player" id="player1">Player 1's Turn</div>
-            <div class="player" id="player2">Player 2's Turn</div>
+        <div class="turnPhase head">
+            <div class="turnHeader"></div>
+            <div class="turnCount">
+                <div class="player1 ">Player 1's Turn</div>
+                <div class="player2 hidden">Player 2's Turn</div>
+            </div>
         </div>
     </div>
 
@@ -42,15 +44,15 @@
         </div>
     </div>
 
-    <div class="results">
-        <div class="player1Win hidden">Player 1 is the winner!</div>
-        <div class="player2Win hidden">Player 2 is the winner!</div>
-        <div class="gameDraw hidden">It's a draw!</div>
-        <div class="player1Quit hidden">Player 1 has quit!</div>
-        <div class="player2Quit hidden">Player 2 has quit!</div>
+    <div class="resultsContainer">
+        <div class="results player1Win hidden">Player 1 is the winner!</div>
+        <div class="results player2Win hidden">Player 2 is the winner!</div>
+        <div class="results gameDraw hidden">It's a draw!</div>
+        <div class="results player1Quit hidden">Player 1 has quit!</div>
+        <div class="results player2Quit hidden">Player 2 has quit!</div>
     </div>
 
-    <button class="quit">Give Up</button>
+    <button class="quit hidden">Give Up</button>
 
     <script src="script.js"></script>
 </body>
