@@ -24,7 +24,7 @@ function endWin1() {
     play2Turn.classList.add("hidden");
     player1 = player1 + 1;
     score1.innerHTML = "Player 1: " + player1;
-    rematch.classList.toggle("hidden")
+    rematch.classList.remove("hidden")
 }
 function endWin2() {
     turn = 3; win2.classList.toggle("hidden");
@@ -32,15 +32,15 @@ function endWin2() {
     play2Turn.classList.add("hidden");
     player2 = player2 + 1;
     score2.innerHTML = "Player 2: " + player2;
-    rematch.classList.toggle("hidden")
+    rematch.classList.remove("hidden")
 }
 
 function checkTie() {
     if ( round == 9 ) {
         if (win1.classList.contains("hidden") == true && win2.classList.contains("hidden") == true) {
-            draw.classList.toggle("hidden");
+            draw.classList.remove("hidden");
             turn = 4;
-            rematch.classList.toggle("hidden")
+            rematch.classList.remove("hidden")
         }
     } else { return round }
 }
@@ -54,7 +54,9 @@ rematch.addEventListener("click", function(evt) {
         turn = 0;
         round = 0;
         play1Turn.classList.remove("hidden");
-        rematch.classList.toggle("hidden")
+        play2Turn.classList.add("hidden");
+        draw.classList.add("hidden");
+        rematch.classList.add("hidden")
     })
 })
 
