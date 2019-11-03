@@ -42,7 +42,7 @@ function checkTie() {
             turn = 4;
             rematch.classList.remove("hidden")
         }
-    } else { return round }
+    } else { return }
 }
 
 rematch.addEventListener("click", function(evt) {
@@ -60,18 +60,17 @@ rematch.addEventListener("click", function(evt) {
     })
 })
 
+function player1sTurn() { play1Turn.classList.add('hidden'); play2Turn.classList.remove('hidden') }
+function player2sTurn() { play2Turn.classList.add('hidden'); play1Turn.classList.remove('hidden') }
 game.forEach(function(block) {
-
     block.addEventListener("click", function(evt) {
         evt.preventDefault();
-        let player1 = play1Turn.classList.toggle("hidden");
-        let player2 = play2Turn.classList.toggle("hidden");
 
-        if (turn == 0 && block.style.background == "") {
+        if (turn === 0 && block.style.background === "") {
             block.style.background = "red";
             turn = 1;
-            player1;
-            player2;
+            player2sTurn();
+            round = round + 1;
 
             if      ( game[0].style.background
                     + game[1].style.background
@@ -106,11 +105,11 @@ game.forEach(function(block) {
                     + game[6].style.background
                    == red ) { endWin1() }
         
- } else if (turn == 1 && block.style.background == "") {
+ } else if (turn === 1 && block.style.background === "") {
             block.style.background = "blue";
             turn = 0;
-            player2;
-            player1;
+            player1sTurn();
+            round = round + 1;
 
             if      ( game[0].style.background
                     + game[1].style.background
@@ -145,7 +144,6 @@ game.forEach(function(block) {
                     + game[6].style.background
                    == blue ) { endWin2() }
         }
-        round = round + 1;
         checkTie()
     })
 })
